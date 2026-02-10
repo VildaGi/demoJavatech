@@ -10,9 +10,9 @@ public class PostService {
 
     public List<Post> listAllPosts(){
         return List.of(
-                new Post("Post 1", 0),
-                new Post("Post 2", 0),
-                new Post("Post 3", 0)
+                new Post("Post 1", new Date()),
+                new Post("Post 2", new Date()),
+                new Post("Post 3", new Date())
         );
     }
 }
