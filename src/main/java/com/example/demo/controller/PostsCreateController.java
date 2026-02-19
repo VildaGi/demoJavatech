@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class PostsCreateController {
-
     @Autowired
     private PostService postService;
 
@@ -20,7 +19,10 @@ public class PostsCreateController {
 
     @RequestMapping(path = "/new", method = RequestMethod.POST)
     public String doCreate(@ModelAttribute("text") String text){
-        postService.create(text);
+        postService.create(
+                (long) postService.listAllPosts().size(),
+                text
+        );
         return "redirect:/";
     }
 }

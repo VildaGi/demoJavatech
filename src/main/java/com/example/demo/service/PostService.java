@@ -12,9 +12,9 @@ public class PostService {
 
     public PostService() {
         posts = new ArrayList<>(Arrays.asList(
-                new Post("Post 1", new Date()),
-                new Post("Post 2", new Date()),
-                new Post("Post 3", new Date())
+                new Post(0L, "Post 1", new Date()),
+                new Post(1L, "Post 2", new Date()),
+                new Post(2L, "Post 3", new Date())
         ));
     }
 
@@ -22,7 +22,7 @@ public class PostService {
         return posts;
     }
 
-    public void create(String text) {
-        posts.add(new Post(text, new Date()));
+    public void create(Long id, String text) {
+        posts.add(new Post(id, text, new Date()));
     }
 }
